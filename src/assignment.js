@@ -35,9 +35,26 @@ function sumOfNumbersTo(destination) {
 function countEvenNumbersWithin(destination) {
     // Write your code here
     // get the number from 1 to destination
+    let arrayOfNumbers = Array.from({ length: destination, }, (value, index) => index + 1);
+
     let sum = 0;
     let count = 0;
     let arrayOfEvenNumbers = [];
+
+    // array of even numbers
+    arrayOfNumbers.forEach((number) => {
+        if (number % 2 === 0) {
+            arrayOfEvenNumbers.push(number);
+        }
+    });
+
+    // Sum
+    arrayOfEvenNumbers.forEach((num) => {
+        sum += num;
+    });
+
+    // count
+    count = arrayOfEvenNumbers.length;
 
     return {
         // property value shorthand
@@ -49,7 +66,7 @@ function countEvenNumbersWithin(destination) {
     };
 }
 
-// assignment.countEvenNumbersWithin = countEvenNumbersWithin;
+assignment.countEvenNumbersWithin = countEvenNumbersWithin;
 
 /**
  * Challenge - 3
@@ -68,11 +85,11 @@ function countEvenNumbersWithin(destination) {
  */
 function celsiusToFahrenheit(arrayOfNumbers) {
     let result = [];
-
+    result = arrayOfNumbers.map((x) => Math.trunc((x * 1.8) + 32));
     return result;
 }
 
-// assignment.celsiusToFahrenheit = celsiusToFahrenheit;
+assignment.celsiusToFahrenheit = celsiusToFahrenheit;
 
 // ========================
 // DO NOT EDIT THIS BLOCK
